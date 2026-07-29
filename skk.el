@@ -2344,6 +2344,11 @@ KEYS と CANDIDATES を組み合わせて７の倍数個の候補群 (候補数が
           (setq new-one (substring new-one 0 (match-beginning 0))))
         (setq skk-henkan-list (nconc skk-henkan-list
                                      (list new-one)))
+        ;; 候補一覧の表示中に `skk-force-registration-mode-char' で辞書登録
+        ;; モードに入った場合、`skk-henkan-count' は途中の候補を指したまま
+        ;; になっている。確定時に new-one が辞書に登録されるよう、
+        ;; 末尾に追加した new-one を指すように更新する。
+        (setq skk-henkan-count (1- (length skk-henkan-list)))
         (when (skk-numeric-p)
           (setq orglen (length skk-henkan-list))
           (skk-num-convert skk-henkan-count)
@@ -2353,8 +2358,6 @@ KEYS と CANDIDATES を組み合わせて７の倍数個の候補群 (候補数が
           (setq skk-kakutei-flag t))
         (setq skk-henkan-in-minibuff-flag t
               skk-touroku-count (1+ skk-touroku-count))))
-      ;; (nth skk-henkan-count skk-henkan-list) が nil だから辞書登録に
-      ;; 入っている。skk-henkan-count をインクリメントする必要はない。
       ;; new-one が空文字列だったら nil を返す。
       (unless (string= new-one "")
         (setq skk-jisyo-updated t)  ; skk-update-jisyo で参照

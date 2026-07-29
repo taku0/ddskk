@@ -177,8 +177,6 @@
 
 (skk-define-e2e-test skk-henkan-in-minibuff/test6
   ".で強制的に辞書登録モードに入れる"
-  ;; KNOWN-BUG ミニバッファに出ていた最初の候補が登録されるため、スキップする。
-  (skip-when t)
   (okuri-nasi-entries "かんじ /幹事/換字/あ/い/う/え/お/か/き/く/け/こ/"
                       "かん /漢/"
                       "じ /字/")
