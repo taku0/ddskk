@@ -7,6 +7,7 @@
 (require 'skk-cus)
 (require 'skk-tankan)
 (require 'skk-version)
+(require 'skk-gadget)
 (require 'test-utils)
 
 (ert-deftest skk-compute-henkan-lists/test1 ()

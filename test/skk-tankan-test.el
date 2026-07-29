@@ -2,6 +2,13 @@
 
 (require 'ert)
 (require 'skk)
+(require 'skk-auto)
+(require 'skk-cdb)
+(require 'skk-comp)
+(require 'skk-cus)
+(require 'skk-tankan)
+(require 'skk-version)
+(require 'skk-gadget)
 (require 'test-utils)
 
 (skk-define-e2e-test skk-tankan/test1
