@@ -937,7 +937,8 @@ Delete Selection $B%b!<%I$,(B SKK $B$r;H$C$?F|K\8lF~NO$KBP$7$F$b5!G=$9$k$h$&$
 $B"&%b!<%I$G$O(B `skk-henkan-start-point' ($B"&$ND>8e(B) $B$H%+!<%=%k$N4V$NJ8;zNs$K$D$$(B
 $B$F!"$R$i$,$J$H%+%?%+%J$rF~$lBX$($k!#(B"
   (interactive "P")
-  (let ((show skk-show-mode-enable))    ;$B%A%e!<%H%j%"%k<B9TCf$N$_(B nil
+  (let ((show (and skk-show-mode-show
+                   skk-show-mode-enable)))    ;$B%A%e!<%H%j%"%k<B9TCf$N$_(B nil
     (cond
      ((eq skk-henkan-mode 'on)      ;$B"&%b!<%I(B
       (let (char-type)
