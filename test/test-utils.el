@@ -156,8 +156,10 @@ OKURI-ARI-ENTRIES と OKURI-NASI-ENTRIES は文字列のリストであり、各
 KEEP-ORDER が nil の場合、この関数は OKURI-ARI-ENTRIES と OKURI-NASI-ENTRIES
 を破壊してソートする。"
   (unless keep-order
-    (sort okuri-ari-entries (lambda (s1 s2) (string-lessp s2 s1)))
-    (sort okuri-nasi-entries #'string-lessp))
+    (setq okuri-ari-entries
+          (sort okuri-ari-entries (lambda (s1 s2) (string-lessp s2 s1))))
+    (setq okuri-nasi-entries
+          (sort okuri-nasi-entries #'string-lessp)))
   (concat
    (mapconcat
     #'identity

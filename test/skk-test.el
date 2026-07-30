@@ -145,8 +145,6 @@
 
 (skk-define-e2e-test skk-henkan-in-minibuff/test4
   "辞書登録は再帰的にできる。"
-  ;; なぜか通らない。要調査。
-  (skip-when (version< emacs-version "29"))
   (okuri-nasi-entries "さい /再/"
                       "き /帰/"
                       "てき /的/")
@@ -215,8 +213,6 @@
 
 (skk-define-e2e-test skk-process-prefix-or-suffix/test1
   ">で接頭辞・接尾辞を入力できる。"
-  ;; なぜか通らない。要調査。
-  (skip-when (version< emacs-version "29"))
   (okuri-nasi-entries "ぜん /全/"
                       "ぜん> /前/"
                       "じだい /時代/"
